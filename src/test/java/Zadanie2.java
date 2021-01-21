@@ -1,4 +1,5 @@
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -7,6 +8,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
+
+import static org.junit.Assert.assertFalse;
 
 
 public class Zadanie2 {
@@ -49,7 +52,7 @@ public class Zadanie2 {
         role = new Select(driver.findElement(By.id("role")));
     }
 
-    @Test
+    @Ignore
     public void fillForm() {
         firstNameInput.sendKeys("Karol");
         System.out.println(firstNameInput.isDisplayed());
@@ -65,6 +68,7 @@ public class Zadanie2 {
         role.selectByVisibleText("Manager");
         comment.sendKeys("To jest mój pierwszy automat testowy");
         System.out.println("Wspaniały test milordzie");
+        assertFalse(true);
         submit.click();
     }
 }
